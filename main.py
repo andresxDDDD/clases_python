@@ -19,10 +19,8 @@ class Persona:   # j  , j,    34
 
     def verificar_rut(self):
         if self.rut == 0:
-            print("sin rut") 
-        else:
-            print("rut listo")
-
+            pass
+     
 #instancia
 juanito = Persona("juanito", 34, 1111111111)
 carlos = Persona("carlos", 32,2222222222)
