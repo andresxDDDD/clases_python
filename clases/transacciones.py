@@ -49,7 +49,7 @@ class GestorFinanzas:
         if not isinstance(transaccion, Transaccion):
             raise TypeError("Debe ser una transaccion valida")
         self.transacciones.append(transaccion)
-        print("transaccion agregada")
+        print(f"transaccion agregada de tipo {type(transaccion)}")
 
     def mostrar_todo(self):
         return [t.mostrar() for t in self.transacciones]
@@ -60,28 +60,12 @@ class GestorFinanzas:
         for transaccion in self.transacciones:
             if not isinstance(transaccion, Ingreso):
                 balance += transaccion.get_monto()
+                print(balance)
             else:
                 balance -= transaccion.get_monto()
-            return 
+                print(balance)
+        return balance
             
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     def guardar_en_archivo(self):
         pass
 
@@ -90,17 +74,32 @@ class GestorFinanzas:
     
     
 
-        
-ingreso = Ingreso(100,"ingreso")
-egreso = Egreso(100, "dasdda")
+#instanciando  objetos de tipo transaccion    
+ingreso1 = Ingreso(1000,"ingreso")
+ingreso2 = Ingreso(10000,"ingreso")
+ingreso3 = Ingreso(1030,"ingreso")
+ingreso4 = Ingreso(10029,"ingreso")
+egreso1 = Egreso(10044, "dasdda")
+egreso2 = Egreso(1002, "dasdda")
+egreso3 = Egreso(100200, "dasdda")
+
+
+
+
+#instancia de tipo gestor
 gestor = GestorFinanzas()
 
-variable= "texto"
 
 
-gestor.agregar(egreso)
-gestor.agregar(ingreso)
-
+#agregando a la lista de la clase gestor 
+gestor.agregar(egreso1)
+gestor.agregar(ingreso1)
+gestor.agregar(egreso2)
+gestor.agregar(ingreso2)
+gestor.agregar(egreso3)
+gestor.agregar(ingreso3)
+gestor.agregar(ingreso4)
+gestor.calcular_balance()
 print(gestor.mostrar_todo())
 
 
