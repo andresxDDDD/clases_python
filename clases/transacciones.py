@@ -1,3 +1,5 @@
+import json
+
 class Transaccion:
     
     def __init__(self, monto,descripcion):
@@ -66,8 +68,18 @@ class GestorFinanzas:
                 print(balance)
         return balance
             
-    def guardar_en_archivo(self):
-        pass
+    def guardar_en_archivo(self, archivo="archivo.txt" ):
+        data = [{
+            "tipo":transaccion.tipo(),
+            "monto":transaccion.get_monto(),
+            "descripcion":transaccion.descripcion
+        } 
+        for transaccion in self.transacciones
+        ]
+
+        with open(archivo,"w") as w:
+            pass
+
 
     def importar_del_archivo(self):
         pass
