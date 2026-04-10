@@ -28,10 +28,10 @@ class Aguila(Ave):
         print("ando volando son una agila")
 
 
-#pichon = Aguila()
-#pichon.volar()
+pichon = Aguila()
+pichon.volar()
 
-#isinstance()
+isinstance()
 
 class Pago:
     def __init__(self, monto):
